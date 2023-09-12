@@ -1,15 +1,23 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-satori-go.uuid
+Section: devel
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Peter Colberg <peter@colberg.org>
+Build-Depends: debhelper-compat (= 12),
+               dh-golang,
+               golang-any,
+               golang-gopkg-check.v1-dev
+Standards-Version: 4.2.1
+Homepage: https://github.com/satori/go.uuid
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-satori-go.uuid
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-satori-go.uuid.git
+XS-Go-Import-Path: github.com/satori/go.uuid
+Testsuite: autopkgtest-pkg-go
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-satori-go.uuid-dev
+Architecture: all
+Depends: golang-gopkg-check.v1-dev, ${misc:Depends}, ${shlibs:Depends}
+Description: Go package for creating and parsing UUID
+ This package implements Universally Unique Identifier (UUID)
+ supporting versions 1, 3, 4 and 5 (as specified in RFC 4122),
+ and version 2 (as specified in DCE 1.1).
